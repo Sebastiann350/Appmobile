@@ -21,7 +21,7 @@ app.get('/api/productos', (req,res) =>{
 });
 
 
-app.use('/api/productos', require('./routes/productosRoute'));  //Todo lo que venga de /api/productos lo resuelve este archivo ./routes/productosRoute
+app.use('/api/productos', require('./routes/productoRoute'));  //Todo lo que venga de /api/productos lo resuelve este archivo ./routes/productosRoute
 
 //app.use('/api/categorias', require('./routes/categoriasRoutess'));
 
