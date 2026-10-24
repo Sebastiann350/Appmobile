@@ -3,7 +3,7 @@
 //libreria y credenciales de la base de datos en una variale global
 
 const productos = [
-    { id: 1, nombre: 'Notebook actualizar', precio: 500000},
+    { id: 1, nombre: 'Notebook actualizar', precio: 600000},
     { id: 2, nombre: 'Mouse', precio: 15000},
     { id: 3, nombre: 'Teclado', precio: 25000},
 ];

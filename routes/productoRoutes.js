@@ -4,3 +4,11 @@ const express = require('express');   //importamos libreria para que teng funcio
 
 const router = express.Router();   //encargado de enrutar los pedidos
 
+const ctrl = require('../controller/productosController');   //controlador 
+
+console.log("ENRUTADOR");
+
+router.get('/', ctrl.obtenerTodo);   //definidor la accion obtenerTodo
+router.get('/', ctrl.obtenerUltimo);
+
+module.exports = router;   //exportar

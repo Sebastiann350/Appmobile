@@ -2,6 +2,8 @@
 
 const service = require('../services/productosService');   //importamos nuestro servicio en carpeta services/productosService
 
+console.log("CONTROLADOR");
+
 const obtenerTodo = (req, res) => {   //en res responde de lo q venga de la base de datos
 
     // validar datos que llegan
