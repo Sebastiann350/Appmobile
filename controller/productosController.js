@@ -4,13 +4,20 @@ const service = require('../services/productosService');   //importamos nuestro 
 
 console.log("CONTROLADOR");
 
-const obtenerTodo = (req, res) => {   //en res responde de lo q venga de la base de datos
+const obtenerTodo = async (req, res) => {   //en res responde de lo q venga de la base de datos
 
     // validar datos que llegan
-    
-    const productos = service.obtenerTodo();   //   se conecta con la base de datos
+    //const productos = await service.obtenerTodo();   //   se conecta con la base de datos
+    //res.json(productos);   // viene los datos en formato json
 
-    res.json(productos);   // viene los datos en formato json
+    try {
+        const productos =  await service.obtenerTodo();
+        res.json(productos);
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({error:"error en el servidor"})
+    }
 
 }
 

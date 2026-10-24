@@ -2,14 +2,21 @@
 
 //libreria y credenciales de la base de datos en una variale global
 
-const productos = [
-    { id: 1, nombre: 'Notebook actualizar', precio: 600000},
-    { id: 2, nombre: 'Mouse', precio: 15000},
-    { id: 3, nombre: 'Teclado', precio: 25000},
-];
+
 
 console.log("SERVICIO");
 
-const obtenerTodo = () => productos;
+const supabase = require('../config/supabase');
+
+const obtenerTodo = async () => {
+    //return productos
+
+    const{data,error} =  await supabase
+
+    .from('Productos')
+    .select('*');
+ if (error) throw error;
+ return data;   
+}
 
 module.exports = {obtenerTodo};
