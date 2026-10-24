@@ -12,13 +12,6 @@ app.get('/mensaje', (req, res) => {
     res.json({mensaje: 'Servidor funcionando'});
 });
 
-app.get('/api/productos', (req,res) =>{
-    res.json([
-        { id: 1, nombre: 'Notebook', precio: 500000},
-        { id: 2, nombre: 'Mouse', precio: 15000},
-        { id: 3, nombre: 'Teclado', precio: 25000},
-    ]);
-});
 
 
 app.use('/api/productos', require('./routes/productoRoutes'));  //Todo lo que venga de /api/productos lo resuelve este archivo ./routes/productosRoute
