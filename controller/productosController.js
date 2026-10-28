@@ -53,7 +53,7 @@ const crear = async (req, res) => {
 
 }
 
-const eliminar = async (req, res) =>{
+const eliminar = async (req, res) => {
 
     console.log(req.body.prod_codigo);
 
@@ -67,7 +67,23 @@ const eliminar = async (req, res) =>{
 
 }
 
+const actualizar = async (req, res) => {
+
+    console.log(req.body);
+    
+    try {
+        const data = await service.actualizar(req.body);
+        return res.status(200).json(data);    
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({error: "Error al actualizar"})
+    }
+
+
+
+}
+
 
 const obtenerUltimo = (req, res) => {}
 
-module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId, crear, eliminar};  // exportamos para utlizar en routes
+module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId, crear, eliminar, actualizar};  // exportamos para utlizar en routes

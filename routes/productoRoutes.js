@@ -13,5 +13,6 @@ router.get('/', ctrl.obtenerUltimo);
 router.get('/:id', ctrl.obtenerPorId);
 router.post('/crear', ctrl.crear);
 router.post('/eliminar', ctrl.eliminar);
+router.post('/actualizr', ctrl.actualizar);
 
 module.exports = router;   //exportar
