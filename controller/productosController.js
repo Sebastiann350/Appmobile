@@ -55,7 +55,7 @@ const crear = async (req, res) => {
 
 const eliminar = async (req, res) =>{
 
-    console.log(req.body);
+    console.log(req.body.prod_codigo);
 
     try {
         const data = await service.eliminar(req.body.prod_codigo);
