@@ -19,4 +19,17 @@ const obtenerTodo = async () => {
  return data;   
 }
 
-module.exports = {obtenerTodo};
+const obtenerPorId = async (id) =>{
+
+    const {data, error} = await supabase
+    .from ('productos')
+    .selecto('*')
+    .eq('prod_codigo', id);
+
+    if (error) throw error;
+
+    return data;
+
+}
+
+module.exports = {obtenerTodo, obtenerPorId};

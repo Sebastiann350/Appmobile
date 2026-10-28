@@ -21,6 +21,25 @@ const obtenerTodo = async (req, res) => {   //en res responde de lo q venga de l
 
 }
 
+const obtenerPorId = async (req, res) =>{
+
+    console.log(req.params);  // lo recibo dentro de la url params con id - console.log
+
+    try {
+        const data = await service.obtenerPorId(req.params.id);  // ruta del servicio
+        return res.json(data);  //retorna la respuesta en json lo que contiene data
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({"Error al obtener por id"});  //si da error retorna status 500 con el json "".
+    }
+
+
+
+
+}
+
+
+
 const obtenerUltimo = (req, res) => {}
 
-module.exports = {obtenerTodo, obtenerUltimo};
+module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId};  // exportamos para utlizar en routes
