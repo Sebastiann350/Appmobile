@@ -13,7 +13,7 @@ const obtenerTodo = async () => {
 
     const{data,error} =  await supabase
 
-    .from('Productos')
+    .from('productos')
     .select('*');
  if (error) throw error;
  return data;   
@@ -22,7 +22,7 @@ const obtenerTodo = async () => {
 const obtenerPorId = async (id) =>{
 
     const {data, error} = await supabase  //traemos los datos del comodin
-    .from ('Productos')  // de la tabla producto
+    .from ('productos')  // de la tabla producto
     .select('*')  //trame todo
     .eq('prod_codigo', id);  // filtralo por id
 
