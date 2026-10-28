@@ -21,7 +21,7 @@ const obtenerTodo = async (req, res) => {   //en res responde de lo q venga de l
 
 }
 
-const obtenerPorId = async (req, res) =>{
+const obtenerPorId = async (req, res) => {
 
     console.log(req.params);  // lo recibo dentro de la url params con id - console.log
 
@@ -37,8 +37,23 @@ const obtenerPorId = async (req, res) =>{
 
 }
 
+const crear = async (req, res) => {
+
+    console.log(req.body);
+
+    try {
+        const data = await service.crear(req.body);
+        return res.status(200).json(data);
+    } catch (error) {
+        console.log(error);
+        returnres.status(500).json({error: "error al crear registro"})
+    }
+
+
+
+}
 
 
 const obtenerUltimo = (req, res) => {}
 
-module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId};  // exportamos para utlizar en routes
+module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId, crear};  // exportamos para utlizar en routes
