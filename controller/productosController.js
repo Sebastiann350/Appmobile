@@ -30,9 +30,8 @@ const obtenerPorId = async (req, res) =>{
         return res.json(data);  //retorna la respuesta en json lo que contiene data
     } catch (error) {
         console.log(error);
-        return res.status(500).json({"Error al obtener por id"});  //si da error retorna status 500 con el json "".
+        return res.status(500).json({ error: "Error al obtener por id"});  //si da error retorna status 500 con el json "".
     }
-
 
 
 

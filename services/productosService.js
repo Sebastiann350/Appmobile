@@ -21,15 +21,15 @@ const obtenerTodo = async () => {
 
 const obtenerPorId = async (id) =>{
 
-    const {data, error} = await supabase
-    .from ('productos')
-    .selecto('*')
-    .eq('prod_codigo', id);
+    const {data, error} = await supabase  //traemos los datos del comodin
+    .from ('Productos')  // de la tabla producto
+    .select('*')  //trame todo
+    .eq('prod_codigo', id);  // filtralo por id
 
-    if (error) throw error;
+    if (error) throw error;  // si da error
 
-    return data;
+    return data;  // si esta todo ok retorna data
 
 }
 
-module.exports = {obtenerTodo, obtenerPorId};
+module.exports = {obtenerTodo, obtenerPorId};  // exportamos para utilizar en controller

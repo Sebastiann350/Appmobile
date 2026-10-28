@@ -10,7 +10,6 @@ console.log("ENRUTADOR");
 
 router.get('/', ctrl.obtenerTodo);   //definidor la accion obtenerTodo
 router.get('/', ctrl.obtenerUltimo);
-
-router.get('/id', ctrl.obtenerPorId);
+router.get('/:id', ctrl.obtenerPorId);
 
 module.exports = router;   //exportar
