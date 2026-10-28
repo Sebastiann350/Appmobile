@@ -32,7 +32,7 @@ const obtenerPorId = async (id) =>{
 
 }
 
-const crear = async (productos)=> {
+const crear = async (productos) => {
 
     const {data,error} = await supabase
     .from ('productos')
@@ -45,4 +45,17 @@ const crear = async (productos)=> {
 
 }
 
-module.exports = {obtenerTodo, obtenerPorId, crear};  // exportamos para utilizar en controller
+const eliminar = async (id) => {
+    const {data,error} = await supabase
+    .from ('productos')
+    .delete()
+    .eq('prod_codigo', id)
+    .select();
+
+    if (error) throw error;
+
+    return data;
+
+}
+
+module.exports = {obtenerTodo, obtenerPorId, crear, eliminar};  // exportamos para utilizar en controller

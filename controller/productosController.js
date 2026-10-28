@@ -53,7 +53,21 @@ const crear = async (req, res) => {
 
 }
 
+const eliminar = async (req, res) =>{
+
+    console.log(req.body);
+
+    try {
+        const data = await service.eliminar(req.body.prod_codigo);
+        return res.data(200).json(data);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ error: "Error al eliminar"})
+    }
+
+}
+
 
 const obtenerUltimo = (req, res) => {}
 
-module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId, crear};  // exportamos para utlizar en routes
+module.exports = {obtenerTodo, obtenerUltimo, obtenerPorId, crear, eliminar};  // exportamos para utlizar en routes

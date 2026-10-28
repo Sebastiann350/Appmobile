@@ -12,5 +12,6 @@ router.get('/', ctrl.obtenerTodo);   //definidor la accion obtenerTodo
 router.get('/', ctrl.obtenerUltimo);
 router.get('/:id', ctrl.obtenerPorId);
 router.post('/crear', ctrl.crear);
+router.post('/eliminar', ctrl.eliminar);
 
 module.exports = router;   //exportar
