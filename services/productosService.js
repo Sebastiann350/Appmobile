@@ -32,4 +32,17 @@ const obtenerPorId = async (id) =>{
 
 }
 
-module.exports = {obtenerTodo, obtenerPorId};  // exportamos para utilizar en controller
+const crear = async (productos)=> {
+
+    const {data,error} = await supabase
+    .from ('productos')
+    .insert (productos)
+    .select ();
+
+    if (error) throw error;
+
+    return data;
+
+}
+
+module.exports = {obtenerTodo, obtenerPorId, crear};  // exportamos para utilizar en controller
